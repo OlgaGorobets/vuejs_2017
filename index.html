@@ -1,0 +1,341 @@
+<!DOCTYPE html >
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+		<link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+		<title></title>
+		
+		<link rel="stylesheet" href="css/main.min.css">
+	</head>
+	<body>	
+		
+		<div class="page">
+			<div id="topApp">
+			<div class="header">
+				<div class="header__top"><a href="#" title="" class="logo"><img src="images/logo.png" alt=""></a></div>
+				<div class="header__mid">
+					<div class="header__title">
+						Professional<br>
+						Google Analytics Setup
+					</div>
+					<div class="header__cols">
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col-md-3 col-xs-6">
+									<div class="row">
+										<div class="column column--1">
+											 — Fill the<br>
+											 application<br>
+											 form 
+										</div>
+									</div>
+								</div>
+								<div class="col-md-3 col-xs-6">
+									<div class="row">
+										<div class="column column--2">
+											 — Provide <br>
+											 access to GA <br>
+											 in one click 
+										</div>									
+									</div>
+								</div>
+								<div class="col-md-3 col-xs-6">
+									<div class="row">
+										<div class="column column--3">
+											  — Pay <br>
+											 online <br>
+											 $200
+										</div>										
+									</div>
+								</div>
+								<div class="col-md-3 col-xs-6">	
+									<div class="row">
+										<div class="column column--4">
+											 — Within  <br>
+											 3 working days<br>
+											 full set up the GA 
+										</div>									
+									</div>
+								</div>								
+							</div>
+						</div>		
+					</div>
+					<div class="header__btn-parent"><span class="btn toggleBtn" v-on:click="toggle=true">GIVE ACCESS</span></div>
+				</div>
+			</div>
+			<div class="toggle-block" v-bind:class="{ active: toggle }">
+				<span class="btn-toggle" v-on:click="toggle=false">roll up</span>
+				<div class="toggle-block__inner">
+					<div class="form-parent">
+						<form id="accessForm" @submit.prevent="validateForm">
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col-sm-9"><div class="row">
+									<div class="col-sm-6">	
+										<div class="row">						
+											<div class="field-parent">
+												<div class="field-name">#</div>
+												<input class="field1"  name="code" value="" v-validate="{required:true}" :class="{'error': errors.has('code') }">
+											</div>
+										</div>
+									</div>	
+									<div class="col-sm-6">	
+										<div class="row">									
+											<div class="field-parent">
+												<div class="field-name">Name</div>
+												<input class="field1"  name="name" value="" v-validate="{required:true}" :class="{'error': errors.has('name') }">
+											</div>
+										</div>
+									</div></div>
+								</div>
+								<div class="col-sm-3">	
+									<div class="row">	
+										<div class="btn-parent">
+											<button type="submit" class="btn btn--dark">GIVE ACCESS</button>
+											<span class="is-ok"><img src="images/ok.svg" alt=""></span>
+										</div>
+									</div>
+								</div>	
+							</div>
+						</div>	
+						</form>
+					</div>
+				</div>
+			</div>
+			</div>
+			<div class="main-content">
+				<div class="gray-bg">
+					<div class="form-line-parent">
+						<div class="title1">Set up the Google Analytics for your site in one click</div>
+						<form id="setupForm" @submit.prevent="validateForm">
+						<div class="container-fluid">
+							<div class="row">					
+								<div class="col-md-9">
+									<div class="row">
+										<div class="col-sm-4">
+											<div class="row">
+												<div class="field-parent">												
+													<input class="field"  name="name" value="" placeholder="Name" v-validate="{required:true}" :class="{'error': errors.has('name') }">
+												</div>											
+											</div>
+										</div>
+										<div class="col-sm-4">
+											<div class="row">
+												<div class="field-parent">												
+													<input class="field"  name="site" value="" placeholder="Site" v-validate="{required:true}" :class="{'error': errors.has('site') }">
+												</div>											
+											</div>
+										</div>
+										<div class="col-sm-4">
+											<div class="row">
+												<div class="field-parent">												
+													<input class="field"  name="email"  value="" placeholder="E-mail" v-validate="'required|email'" :class="{'error': errors.has('email') }">
+												</div>											
+											</div>
+										</div>									
+									</div>
+								</div>
+								<div class="col-md-3">
+									<div class="row">
+										<div class="btn-parent">
+											<button type="submit" class="btn btn--dark">SEND</button>
+										</div>									
+									</div>
+								</div>
+							</div>
+						</div>	
+						</form>		
+					</div>
+					<div class="title">We are doing</div>
+					<div class="w-block">
+						<div class="w-block__inner">
+							<div class="icon-item">
+								<div class="icon"><img src="images/icon_1.svg" alt=""></div>
+								<div class="text">
+									Setup and Configuration<br>
+									Google Analytics and <br>
+									Google Tag Manager
+								</div>
+							</div>
+							<div class="icon-item">
+								<div class="icon"><img src="images/icon_2.svg" alt=""></div>
+								<div class="text">
+									Goals, Notifications,<br>
+									Segments Setup
+								</div>
+							</div>
+							<div class="icon-item">
+								<div class="icon"><img src="images/icon_3.svg" alt=""></div>
+								<div class="text">
+									Setting the<br>
+									e-commerce module
+								</div>
+							</div>						
+						</div>
+					</div>
+				</div>
+				<div class="w-bg">
+					<div class="title">With our help you will get</div>
+					<div class="icon-tabs" id="tabs">
+						<div class="icon-tabs__data">
+							<div class="data" v-bind:class="{ active: active==0 }">
+								<span>Correct, segmented<br>
+								full reports which help<br>
+								you to analyze your<br>
+								online campaigns</span>
+							</div>
+							<div class="data" v-bind:class="{ active: active==1 }">
+								<span>Correct, segmented<br>
+								full reports which help<br>
+								you to analyze your<br>
+								online campaigns1</span>
+							</div>		
+							<div class="data" v-bind:class="{ active: active==2 }">
+								<span>Correct, segmented<br>
+								full reports which help<br>
+								you to analyze your<br>
+								online campaigns2</span>
+							</div>						
+						</div>
+						<div class="icon-tabs__icons">
+							<span class="icon" v-bind:class="{ active: active==0 }" v-on:click="active=0"><img src="images/icon_4.svg" alt=""></span>
+							<span class="icon" v-bind:class="{ active: active==1 }" v-on:click="active=1"><img src="images/icon_5.svg" alt=""></span>
+							<span class="icon" v-bind:class="{ active: active==2 }" v-on:click="active=2"><img src="images/icon_6.svg" alt=""></span>
+						</div>
+					</div>
+				</div>
+				<div class="form-block">
+					<div class="form-block__inner">
+						<div class="form-parent">
+							<form id="orderForm" @submit.prevent="validateForm">
+								<div class="field-parent">												
+									<input class="field" name="name" value="" placeholder="Name" v-validate="{required:true}" :class="{'error': errors.has('name') }">
+								</div>
+								<div class="field-parent">												
+									<input class="field" name="email" value="" placeholder="Email" v-validate="'required|email'" :class="{'error': errors.has('email') }">
+								</div>	
+								<div class="field-parent">												
+									<textarea class="field" name="message" placeholder="Message" v-validate="{required:true}" :class="{'error': errors.has('message') }"></textarea>
+								</div>
+								<div class="btn-parent">
+									<button type="submit" class="btn btn--dark">SEND</button>
+								</div>								
+							</form>
+						</div>
+					</div>
+				</div>				
+				<div class="about-block">
+					<div class="about-block__inner">
+						<div class="title">About us</div>
+						<div class="about-cols">
+							<div class="container-fluid">
+								<div class="row">					
+									<div class="col-sm-4">		
+										<div class="row">
+											<div class="icon-col icon-col--1">
+												<div class="icon-col__icon"><img src="images/icon_7.svg" alt=""></div>
+												<div class="icon-col__text">
+													UaMaster is Google <br>
+													Certified Partner
+												</div>												
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-4">		
+										<div class="row">
+											<div class="icon-col icon-col--2">
+												<div class="icon-col__text">
+													Our team consists  <br>
+													of certificated experienced <br>
+													specialists of Google Analytics, <br>
+													Google AdWords, <br>
+													Bing etc.
+												</div>											
+												<div class="icon-col__icon"><img src="images/icon_8.svg" alt=""></div>												
+											</div>										
+										</div>
+									</div>
+									<div class="col-sm-4">		
+										<div class="row">
+											<div class="icon-col icon-col--3">
+												<div class="icon-col__text">
+													We are one from most  <br>
+													fast growing advertising agency <br>
+													in Internet area more than  <br>
+													12 years from 2004 till now
+												</div>											
+												<div class="icon-col__icon"><img src="images/icon_9.svg" alt=""></div>												
+											</div>											
+										</div>
+									</div>									
+								</div>
+								<div class="row">					
+									<div class="col-sm-4">		
+										<div class="row">
+											<div class="num-col">
+												<div class="num-col__num">5500</div>
+												<div class="num-col__text">Advertising campaigns</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-4">		
+										<div class="row">
+											<div class="num-col">
+												<div class="num-col__num">700</div>
+												<div class="num-col__text">Clients</div>
+											</div>										
+										</div>
+									</div>
+									<div class="col-sm-4">		
+										<div class="row">
+											<div class="num-col">
+												<div class="num-col__num">17</div>
+												<div class="num-col__text">Countries</div>
+											</div>											
+										</div>
+									</div>									
+								</div>								
+							</div>	
+						</div>
+					</div>
+				</div>
+				<div class="brands-block">
+					<div class="title">We are trusted by big brands</div>
+					<div class="brands">
+						<a href="#" class="brand" title=""><span><img src="images/icon_google.svg" alt=""></span></a>
+						<a href="#" class="brand" title=""><span><img src="images/icon_google.svg" alt=""></span></a>
+						<a href="#" class="brand" title=""><span><img src="images/icon_google.svg" alt=""></span></a>
+						<a href="#" class="brand" title=""><span><img src="images/icon_google.svg" alt=""></span></a>
+						<a href="#" class="brand" title=""><span><img src="images/icon_google.svg" alt=""></span></a>
+					</div>
+				</div>
+				<div class="form-block form-block--bottom">
+					<div class="form-block__inner">
+						<div class="form-parent">
+							<div class="title">Still have questions?</div>
+							<form id="orderBottomForm" @submit.prevent="validateForm">
+								<div class="field-parent">												
+									<input class="field" name="name" value="" placeholder="Name" v-validate="{required:true}" :class="{'error': errors.has('name') }">
+								</div>
+								<div class="field-parent">												
+									<input class="field" name="email" value="" placeholder="Email" v-validate="'required|email'" :class="{'error': errors.has('email') }">
+								</div>	
+								<div class="field-parent">												
+									<textarea class="field" name="message" placeholder="Message" v-validate="{required:true}" :class="{'error': errors.has('message') }"></textarea>
+								</div>
+								<div class="btn-parent">
+									<button type="submit" class="btn btn--dark">SEND</button>
+								</div>								
+							</form>
+						</div>
+					</div>
+				</div>					
+			</div>
+		</div>
+		<div class="to-top" id="toTop" v-on:click="go()" v-if="visible"><img src="images/icon_to_top.svg" alt=""></div>
+		<script type="text/javascript" src="js/main.min.js"></script>		
+	</body>
+</html>	
